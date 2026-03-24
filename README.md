@@ -4,16 +4,19 @@
 
 ## Code description
 
-`code/01_table1.R`
-
+`code/00_download_data.R`
   - reads dataset in from UC Irvine Machine Learning Repository website
   - saves dataset as a `.csv` object in `raw_data/` folder
+
+`code/01_table1.R`
+
+  - reads data saved by `code/00_download_data.R`
   - creates a 'Table One' of descriptive statistics and saves as
     a `.rds` object in `output/` folder
 
 `code/02_statistics.R`
 
-  - reads data saved by `code/01_table1.R`
+  - reads data saved by `code/00_download_data.R`
   - creates a t-test table comparing blood pressure and blood sugar
     between low and high mortality risk levels and saves as a `.rds` object in 
     `output/` folder
@@ -22,7 +25,7 @@
 
 `code/03_graph.R`
 
-  - reads data saved by `code/01_table1.R`
+  - reads data saved by `code/00_download_data.R`
   - creates scatterplot of age and blood sugar and saves as a `.rds` object
     in `output/` folder
 
@@ -32,10 +35,11 @@
 
 `Final_Analysis.Rmd`
 
+  - loads data that `code/00_download_data.R` saved in `output/` folder
   - loads table1 from `code/01_table1.R`
   - loads regression model and t-test table from `code/02_statistics.R`
   - loads graph from `code/03_graph.R`
-  - includes comprehensive report of t-tests, regression, descriptive statistics,
-    and graph of maternal cardiovascular health in rural Bangladesh
+  - includes comprehensive report of t-tests, regression, descriptive
+    statistics, and graph of maternal cardiovascular health in rural Bangladesh
 
 ------------------------------------------------------------------------
