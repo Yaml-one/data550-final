@@ -1,0 +1,131 @@
+---
+title: "Maternal Health Risk in Rural Areas of Bangladesh"
+author: "Victoria Chang"
+date: "`r Sys.Date()`"
+output: html_document
+---
+
+## Introduction
+
+### Dataset description
+
+Data from a select group of pregnant women at various healthcare centers in
+rural areas of Bangladesh were collected. The dataset includes continuous
+variables age, systolic blood pressure, diastolic blood pressure, blood sugar,
+body temperature, and heart rate which were collected via wearable health
+sensors. One categorical variable, predicted risk level for maternal mortality,
+is also included.  
+
+### Analysis objectives
+
+The first aim of this report is to determine whether there are significant
+differences in blood pressure and blood pressure between low and high maternal
+mortality risk levels using t-tests.  
+
+The second aim of this report is to run a simple linear regression and depict a
+scatterplot between age and blood sugar, which will help elucidate any potential
+association between the two variables. 
+
+Together, these statistical analyses can help inform scientific inquiry into
+potential relationships between variables such as blood pressure, blood sugar,
+age, and level of maternal mortality risk in rural Bangladesh communities.
+Results may help inform targets for intervention to reduce maternal mortality
+risk in rural areas of Bangladesh.
+
+```{r, set-chunk-opts, echo = FALSE}
+library(knitr) # load packages
+
+# set global chunk options
+opts_chunk$set(
+  echo = FALSE, warning = FALSE, message = FALSE
+) 
+
+```
+
+
+```{r read-dataset}
+
+# Set filepaths
+here::i_am("Final_Analysis.Rmd") # declare location of current report
+
+wd <- here::here() # Set path for project root directory
+dir.create(file.path(wd, "raw_data"), showWarnings = FALSE) # create raw_data folder
+
+setwd(file.path(wd)) # set working directory
+
+# Load data
+data <- read.csv(
+  file = here::here("raw_data/raw_data.csv") 
+)
+
+
+```
+
+
+
+
+
+
+
+The below table shows the descriptive statistics of all variables such as age,
+blood sugar, blood pressure, temperature, and heart rate in the dataset
+stratified by maternal mortality risk level (Median and IQR for Age; Mean and
+Standard Deviation for all other variables).
+
+
+```{r descriptive-table}
+
+# Load table1 from output/ folder
+table_one <- readRDS(
+  file = here::here("output", "table_one.rds")
+)
+
+table_one # Output table
+
+
+```
+
+
+The below table depicts the p-value statistics from the t-tests comparing
+blood pressure and blood sugar variables between pregnant women with low and
+high risk maternal mortality.
+
+
+```{r t-test-table}
+
+# Load table_two from output/ folder
+table_two <- readRDS(
+  file = here::here("output", "table_two.rds")
+)
+
+table_two # Output table
+
+```
+
+
+
+```{r regression}
+
+# Load regression from output/ folder
+reg1 <- readRDS(
+  file = here::here("output", "reg1.rds")
+)
+
+```
+
+The adjusted R-squared of the linear regression model between age and blood
+sugar is `r summary(reg1)$adj.r.squared`. The figure below shows a scatterplot
+of age (years) and blood sugar (mmol/L) with a linear regression model of the
+two variables overlayed. 
+
+
+```{r descriptive-figure}
+#| fig.align = "center",
+#| out.width = "600px"
+
+# Load graph
+knitr::include_graphics(
+  here::here("output/scatterplot.png")
+)
+```
+
