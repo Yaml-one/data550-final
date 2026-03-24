@@ -28,12 +28,14 @@
 
 `code/04_render_report.R`
   
-  - renders `report.Rmd`
+  - renders `Final_Analysis.Rmd`
 
-`report.Rmd`
+`Final_Analysis.Rmd`
 
   - loads table1 from `code/01_table1.R`
   - loads regression model and t-test table from `code/02_statistics.R`
   - loads graph from `code/03_graph.R`
+  - includes comprehensive report of t-tests, regression, descriptive statistics,
+    and graph of maternal cardiovascular health in rural Bangladesh
 
 ------------------------------------------------------------------------
