@@ -26,7 +26,7 @@
 `code/03_graph.R`
 
   - reads data saved by `code/00_download_data.R`
-  - creates scatterplot of age and blood sugar and saves as a `.rds` object
+  - creates scatterplot of age and blood sugar and saves as a `.png` object
     in `output/` folder
 
 `code/04_render_report.R`
