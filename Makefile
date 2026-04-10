@@ -1,8 +1,3 @@
-R_LIBS_USER := C:/Users/chang/AppData/Local/R/win-library/4.5
-export R_LIBS_USER
-test:
-	Rscript -e ".libPaths()"
-
 Final_Analysis.html: Final_Analysis.Rmd code/04_render_report.R \
   output/reg1.rds output/scatterplot.png output/table_one.rds \
   output/table_two.rds raw_data/raw_data.csv 
@@ -26,3 +21,7 @@ output/scatterplot.png: code/03_graph.R raw_data/raw_data.csv
 .PHONY: clean
 clean:
 	rm -f output/*.rds && rm -f output/*.png && rm -f *.html
+	
+.PHONY: install
+install:
+	Rscript -e "renv::restore(prompt = FALSE)"

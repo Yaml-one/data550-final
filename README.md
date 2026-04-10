@@ -1,8 +1,22 @@
 # Report on cardiovascular health of pregnant women in rural Bangladesh
 
+## Report Contents
+The final report includes descriptive statistics (Table 1), t-tests comparing
+risk groups, a linear regression model of age and blood sugar, and a
+scatterplot of age vs. blood sugar.
+
+
+
 ------------------------------------------------------------------------
 
-## Code description
+## 1. Generate the final report
+To conduct the analysis and generate the final report, run Makefile target:
+`make Final_Analysis.html`
+
+
+------------------------------------------------------------------------
+
+## 2. R Script code description
 
 `code/00_download_data.R`
   - reads dataset in from UC Irvine Machine Learning Repository website
@@ -33,6 +47,10 @@
   
   - renders `Final_Analysis.Rmd`
 
+
+
+## Final Report File
+
 `Final_Analysis.Rmd`
 
   - loads data that `code/00_download_data.R` saved in `output/` folder
@@ -42,4 +60,18 @@
   - includes comprehensive report of t-tests, regression, descriptive
     statistics, and graph of maternal cardiovascular health in rural Bangladesh
 
+
 ------------------------------------------------------------------------
+
+## 3. Makefile targets
+
+`make install`
+
+  - installs and synchronizes the project’s R package environment to match the
+    versions specified in the lockfile, ensuring reproducibility and preventing
+    dependency mismatches.
+
+`make clean`
+
+  - removes all analysis, table, figure, and report outputs for ease of
+    rerunning code 
