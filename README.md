@@ -6,17 +6,62 @@ risk groups, a linear regression model of age and blood sugar, and a
 scatterplot of age vs. blood sugar.
 
 
+# Section A: On Local Machine
 
 ------------------------------------------------------------------------
 
-## 1. Generate the final report
+### 1. Running automated Docker image to build report
+
+Run `pwd` in bash to ensure you have set your working directory to this project
+directory
+
+`make Win-report/Final_Analysis.html`
+
+  - runs Docker container to automatically build report in report folder
+    mounted onto your local machine for Windows OS
+
+
+`make MLin-report/Final_Analysis.html`
+
+  - runs Docker container to automatically build report in report folder
+    mounted onto your local machine for Mac or Linux OS
+
+------------------------------------------------------------------------
+
+### 2. Docker weblink
+
+
+Link to Docker: https://hub.docker.com/r/yamlone/final-base2
+
+
+------------------------------------------------------------------------
+
+### 3. Building the Docker image
+
+Here are the Makefile targets for Docker-associated rules to run on your
+local machine
+
+`make final-base2`
+
+  - builds Docker image with all necessary code and file structures to run R
+    code and build repor in containerized environment and uses renv package for
+    package management
+    
+------------------------------------------------------------------------
+
+# Section B: In Docker Containerized Environment
+
+------------------------------------------------------------------------
+
+### 4. Generate the final report (in Docker containerized environment)
+
 To conduct the analysis and generate the final report, run Makefile target:
 `make Final_Analysis.html`
 
 
 ------------------------------------------------------------------------
 
-## 2. R Script code description
+### 5. R Script code description
 
 `code/00_download_data.R`
   - reads dataset in from UC Irvine Machine Learning Repository website
@@ -49,7 +94,7 @@ To conduct the analysis and generate the final report, run Makefile target:
 
 
 
-## Final Report File
+### Final Report File
 
 `Final_Analysis.Rmd`
 
@@ -63,7 +108,7 @@ To conduct the analysis and generate the final report, run Makefile target:
 
 ------------------------------------------------------------------------
 
-## 3. Makefile targets
+### 6. Makefile commands to update packages and remove output
 
 `make install`
 
@@ -78,22 +123,9 @@ To conduct the analysis and generate the final report, run Makefile target:
     
     
 ------------------------------------------------------------------------
-RUN DOCKER
 
 
 
 
 
 
-
-
-
-
-
-
-
-have section to set workdir to correct dir
-
-Your README.md file should include a section with instructions for building the
-image, a link to the image on DockerHub, and a section with instructions for 
-running the automated version of the image.

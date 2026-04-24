@@ -43,3 +43,5 @@ Win-report/Final_Analysis.html:
 	docker run -v "/$$(pwd)/report":/home/rstudio/project/report yamlone/final-base2
 	
 # rule to build the report automatically in our container (for Mac/Linux OX)
+MLin-report/Final_Analysis.html:
+	docker run -v "$$(pwd)/report":/home/rstudio/project/report yamlone/final-base2
