@@ -75,3 +75,25 @@ To conduct the analysis and generate the final report, run Makefile target:
 
   - removes all analysis, table, figure, and report outputs for ease of
     rerunning code 
+    
+    
+------------------------------------------------------------------------
+RUN DOCKER
+
+
+
+
+
+
+
+
+
+
+
+
+
+have section to set workdir to correct dir
+
+Your README.md file should include a section with instructions for building the
+image, a link to the image on DockerHub, and a section with instructions for 
+running the automated version of the image.

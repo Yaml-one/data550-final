@@ -9,6 +9,7 @@ data <- read.csv(
 
 library(gtsummary) # load packages
 library(labelled)
+library(broom)
 
 # Set labels for RiskLevel variable
 data$RiskLevel <- factor(data$RiskLevel,
