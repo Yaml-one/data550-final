@@ -24,7 +24,7 @@ directory
 `make MLin-report/Final_Analysis.html`
 
   - runs Docker container to automatically build report in report folder
-    mounted onto your local machine for Mac or Linux OS
+    mounted onto your local machine for Mac or Linux
 
 ------------------------------------------------------------------------
 
@@ -44,7 +44,7 @@ local machine
 `make final-base2`
 
   - builds Docker image with all necessary code and file structures to run R
-    code and build repor in containerized environment and uses renv package for
+    code and build report in containerized environment and uses renv package for
     package management
     
 ------------------------------------------------------------------------
